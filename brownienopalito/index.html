@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3DZSMJ15T"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G3DZSMJ15T');
+    </script>
     <meta name="description" content="Brownie no Palito em Fortaleza - CE. Brownies artesanais, pizza brownie e ovos recheados com ingredientes de alta qualidade.">
     <title>Brownie no Palito</title>
     <link rel="stylesheet" href="styles.css">
@@ -38,16 +47,26 @@
     </script>
     
     <main>
-        <picture class="ovo">
-            <source media="(max-width: 900px)" srcset="imagens/pizza_brownie_684x705.jpg" type="image/jpg">
-            <img src="imagens/pizza_brownie_far_2500x2500.png" alt="Pizza Brownie"></picture>
+        <div class="hero-wrap">
+            <picture class="ovo">
+                <source media="(max-width: 900px)" srcset="imagens/pizza_brownie_684x705.jpg" type="image/jpg">
+                <img src="imagens/pizza_brownie_far_2500x2500.png" alt="Pizza Brownie">
+            </picture>
+            <div class="hero-overlay">
+                <p class="hero-tagline">Com amor e com afeto, fiz seu doce predileto!</p>
+                <div class="hero-ctas">
+                    <a href="produtos.html" class="hero-btn hero-btn--primary">Ver produtos</a>
+                    <a href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn--secondary">Peça agora</a>
+                </div>
+            </div>
+        </div>
         <section id="sobre">
                 <div class="container">
                 <div class="texto">
                 <h2>Sobre Nós</h2>
                     <p> Somos a Brownie no Palito, uma empresa que nasceu
                      da vontade de oferecer produtos de qualidade à região do bairro Benfica.
-                    Nosso carro-chefe é o brownie — a tradicional delícia norte-americana — que adaptamos com um toque especial e muito cuidado em cada detalhe.
+                    Nosso carro-chefe é o brownie, a tradicional delícia norte-americana, que adaptamos com um toque especial e muito cuidado em cada detalhe.
                     Um dos nossos principais compromissos vai além do sabor e da apresentação: valorizamos a qualidade desde a escolha dos ingredientes até o produto final.
                     Acreditamos que cada etapa do processo faz diferença e isso se reflete em cada mordida.</p>
                 </div>
@@ -62,11 +81,15 @@
                 <div class="nossos_produtos">
                 <div class="textos">
                 <h2>Nossos Produtos</h2>
-                    <p>São produtos que levam ingredientes de qualidade, pois pensamos em levar o que há de melhor para os nossos clientes.
-                    Trabalhamos com brownies em diversos sabores, como o tradicional chocolate, ninho, ninho com Nutella, entre outros.
-                    Além disso, oferecemos opções de ovos de Páscoa recheados com nossos deliciosos brownies, proporcionando uma experiência única e saborosa para essa época especial do ano.
-                    Venha conhecer <a href="produtos.html" target="_blank">nossos produtos</a> e se deliciar com o sabor irresistível dos nossos brownies e ovos de Páscoa!
-                    </p>
+                    <p>Ingredientes selecionados, preparo artesanal e muito sabor em cada mordida. Trabalhamos com brownies em diversos sabores e formatos:</p>
+                    <ul class="produto-lista">
+                        <li>Brownie tradicional e recheado</li>
+                        <li>Pizza Brownie com decoração especial</li>
+                        <li>Brownie no palito com cobertura de chocolate</li>
+                        <li>Morango do Amor em versões variadas</li>
+                        <li>Fatias de bolo</li>
+                    </ul>
+                    <a href="produtos.html" class="btn-produtos">Ver todos os produtos →</a>
                 </div>
                     <picture class="grid">
                         <img src="imagens/ovo_rocher.png" alt="ovo com ferrero rocher">
@@ -103,7 +126,7 @@ Convidamos todos vocês a fazerem parte dessa jornada conosco, acompanhando noss
                 </p>
             </div>
             <div id="video">
-                <video width="280" height="688" class="videos" autoplay loop muted playsinline>
+                <video width="360" height="auto" class="videos" autoplay loop muted playsinline>
                     <source src="videos/carrinho.mp4" type="video/mp4">
                     <source src="videos/carrinho.mp4" type="video/webm">
                     Seu navegador não suporta o elemento de vídeo.

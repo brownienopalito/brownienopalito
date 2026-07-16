@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3DZSMJ15T"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G3DZSMJ15T');
+    </script>
     <meta name="description" content="Conheça os produtos da Brownie no Palito em Fortaleza. Brownie tradicional, recheado, pizza brownie e muito mais. Faça seu pedido pelo WhatsApp.">
     <title>Produtos | Brownie no Palito - Fortaleza CE</title>
     <link rel="stylesheet" href="produtos.css">
@@ -11,161 +20,194 @@
 <body>
     <header class="header-moderno">
         <a href="index.html">
-        <div class="logo">
-            <img id="logo_brown" src="imagens/logo_so_brownie.png" alt="logo da empresa somente brownie">
-            <img id="logo_sem"  src="imagens/logo_sem_brownie.png" alt="logo da empresa somente texto">
-        </div>
+            <div class="logo">
+                <img id="logo_brown" src="imagens/logo_so_brownie.png" alt="Logo Brownie no Palito">
+                <img id="logo_sem"   src="imagens/logo_sem_brownie.png" alt="Brownie no Palito">
+            </div>
         </a>
-        <button class="menu-toggle" id="menu-toggle">
-            ☰
-        </button>
-
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
         <nav>
             <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="parcerias.html">Parcerias</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="parcerias.html">Parcerias</a></li>
             </ul>
         </nav>
     </header>
 
     <script>
         const toggle = document.getElementById('menu-toggle');
-        const menu = document.querySelector('nav');
-
-        toggle.addEventListener('click', () => {
-        menu.classList.toggle('active');});
+        const menu   = document.querySelector('nav');
+        toggle.addEventListener('click', () => menu.classList.toggle('active'));
     </script>
-    
+
     <main>
-        
         <h2>Nossos Produtos</h2>
 
-        <section class="produtos">
+        <!-- Âncoras de navegação rápida -->
+        <nav class="filtros" aria-label="Navegação rápida de produtos">
+            <a href="#casquinha"     class="filtro-btn">Casquinha</a>
+            <a href="#tradicional"   class="filtro-btn">Tradicional</a>
+            <a href="#recheado"      class="filtro-btn">Recheado</a>
+            <a href="#palito"        class="filtro-btn">No Palito</a>
+            <a href="#pizza-brownie" class="filtro-btn">Pizza Brownie</a>
+            <a href="#morango"       class="filtro-btn">Morango do Amor</a>
+        </nav>
+
+        <!-- 1. Casquinha — imagem à direita (padrão) -->
+        <section class="produtos" id="casquinha">
             <article class="card">
                 <div class="text">
                     <h3>Casquinha de Brownie</h3>
-                    <p class="descricao">Uma fina e crocante casquinha elaborada a partir dos nossos brownies artesanais, perfeita para finalizar sua refeição com um toque doce e cheio de personalidade. Textura delicada, sabor intenso e aquele gostinho que convida a repetir. <strong style="font-weight: bold;">Alérgicos contém derivados lácteos.</strong></p>
-                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">Comprar: R$ 5,00</a>
+                    <p class="descricao">Uma fina e crocante casquinha elaborada a partir dos nossos brownies artesanais, perfeita para finalizar sua refeição com um toque doce e cheio de personalidade. Textura delicada, sabor intenso e aquele gostinho que convida a repetir.</p>
+                    <p><strong>⚠️ Alérgicos: contém derivados lácteos.</strong></p>
+                    <br>
+                    <span class="preco-badge">R$ 5,00</span><br>
+                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">
+                        🛒 Comprar pelo WhatsApp
+                    </a>
                 </div>
-                <picture class="media"><img src="imagens/Casquinhas_320px.png" alt="Casquinha de Brownie" loading="lazy"></picture>
+                <picture class="media">
+                    <img src="imagens/Casquinhas_320px.png" alt="Casquinha de Brownie" loading="lazy">
+                </picture>
             </article>
         </section>
 
-        <section class="produtos">
-            <article class="card">
+        <!-- 2. Tradicional — imagem à esquerda (invertido) -->
+        <section class="produtos" id="tradicional">
+            <article class="card card-reverse">
                 <div class="text">
                     <h3>Brownie Tradicional</h3>
-                    <p class="descricao">Delicioso brownie clássico, feito com ingredientes selecionados para garantir o sabor perfeito. Ideal para aqueles que preferem sentir apenas o sabor da querida massa do brownie. É a porta de entrada para as outras versões e outras delícias. Nosso delicioso brownie tradicional, com tamanho 6x6 e peso de 70g, molhadinho por dentro e crocante por fora. <strong style="font-weight: bold;">Alérgicos contém derivados lácteos.</strong></p>
-                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">Comprar: R$ 7,00</a>
+                    <p class="descricao">Delicioso brownie clássico, feito com ingredientes selecionados para garantir o sabor perfeito. Ideal para quem prefere sentir apenas o sabor da querida massa do brownie. Nosso tradicional vem em tamanho 6×6 cm e 70 g, molhadinho por dentro e crocante por fora.</p>
+                    <p><strong>⚠️ Alérgicos: contém derivados lácteos.</strong></p>
+                    <br>
+                    <span class="preco-badge">R$ 7,00</span><br>
+                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">
+                        🛒 Comprar pelo WhatsApp
+                    </a>
                 </div>
-                <picture class="media"><img src="imagens/tradicional_320px.jpg" alt="Brownie Tradicional" loading="lazy"></picture>
+                <picture class="media">
+                    <img src="imagens/tradicional_320px.jpg" alt="Brownie Tradicional" loading="lazy">
+                </picture>
             </article>
         </section>
 
-        <section class="produtos">
+        <!-- 3. Recheado — imagem à direita -->
+        <section class="produtos" id="recheado">
             <article class="card">
                 <div class="text">
                     <h3>Brownie Recheado</h3>
-                    <p class="descricao">Brownie recheado, uma delícia da primeira até a última mordida. Nosso carro chefe de vendas é objeto de desejo de nossos clientes. É formada por nosso delicioso brownie e recheio cremoso. Tamanho 6x6 com peso de 140g.  Recheios disponíveis: Brigadeiro, Ninho e Ninho com Nutella. <strong style="font-weight: bold;">Alérgicos contém derivados lácteos.</strong> </p>
-                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">Comprar: R$ 9,00</a>
+                    <p class="descricao">Nosso carro-chefe! Uma delícia da primeira até a última mordida: brownie artesanal com recheio cremoso, tamanho 6×6 cm e 140 g. Recheios disponíveis: Brigadeiro, Ninho e Ninho com Nutella.</p>
+                    <p><strong>⚠️ Alérgicos: contém derivados lácteos.</strong></p>
+                    <br>
+                    <span class="preco-badge">R$ 9,00</span><br>
+                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">
+                        🛒 Comprar pelo WhatsApp
+                    </a>
                 </div>
-                <picture class="media"><img src="imagens/Brownie_recheado_320px.png" alt="Brownie Recheado" loading="lazy"></picture>
+                <picture class="media">
+                    <img src="imagens/Brownie_recheado_320px.png" alt="Brownie Recheado" loading="lazy">
+                </picture>
             </article>
         </section>
 
-        <section class="produtos">
-            <article class="card">
+        <!-- 4. No Palito — imagem à esquerda (invertido) -->
+        <section class="produtos" id="palito">
+            <article class="card card-reverse">
                 <div class="text">
                     <h3>Brownie no Palito</h3>
-                    <p class="descricao">Brownie no palito, uma delícia que combina o sabor clássico do brownie com a praticidade de ser servido em um palito. Diferente de todos que já viu, o brownie no palito é formado por uma cobertura de chocolate meio amargo, recheio da sua preferência, nosso brownie delicioso e decorado por granulado, sendo eles Chocoball,  amendoim, granulado de chocolate ou colorido. Peso final de 160g. Recheios disponíveis: Brigadeiro, Ninho, Ninho com Nutella, Limão e Beijinho. <strong style="font-weight: bold;">Alérgicos contém derivados lácteos.</strong></p>
-                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">Comprar: R$ 15,00</a>
+                    <p class="descricao">Diferente de tudo que você já viu! Cobertura de chocolate meio amargo, recheio cremoso, brownie artesanal e granulado à escolha: Chocoball, amendoim, granulado de chocolate ou colorido. Peso final de 160 g. Recheios disponíveis: Brigadeiro, Ninho, Ninho com Nutella, Limão e Beijinho.</p>
+                    <p><strong>⚠️ Alérgicos: contém derivados lácteos.</strong></p>
+                    <br>
+                    <span class="preco-badge">R$ 15,00</span><br>
+                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">
+                        🛒 Comprar pelo WhatsApp
+                    </a>
                 </div>
-                <picture class="media"><img src="imagens/Brownie_palito_320px.png" alt="Brownie no Palito" loading="lazy"></picture>
+                <picture class="media">
+                    <img src="imagens/Brownie_palito_320px.png" alt="Brownie no Palito" loading="lazy">
+                </picture>
             </article>
         </section>
 
-        <section class="produtos">
+        <!-- 5. Pizza Brownie — imagem à direita -->
+        <section class="produtos" id="pizza-brownie">
             <article class="card">
                 <div class="text">
                     <h3>Fatia Pizza Brownie</h3>
-                    <p class="descricao">Belo, criativo e delicioso brownie em formato de pizza com características únicas de nossos brownies. É formada por uma camada de brownie, um delicioso recheio e  decorado com morango, amendoim ou kit kat. Peso final de 250/260g, podendo variar de acordo com o recheio escolhido por conta da decoração. Recheios disponíveis: Kit Kat, Ninho, Ninho com Nutella e Duo. <strong style="font-weight: bold;">Alérgicos contém derivados lácteos.</strong></p>
-                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">Comprar: R$ 18,00</a>
+                    <p class="descricao">Belo, criativo e irresistível! Brownie em formato de fatia de pizza, com recheio cremoso e decoração de morango, amendoim ou Kit Kat. Peso final de 250–260 g (pode variar conforme o recheio). Recheios disponíveis: Kit Kat, Ninho, Ninho com Nutella e Duo.</p>
+                    <p><strong>⚠️ Alérgicos: contém derivados lácteos.</strong></p>
+                    <br>
+                    <span class="preco-badge">R$ 18,00</span><br>
+                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">
+                        🛒 Comprar pelo WhatsApp
+                    </a>
                 </div>
-                <picture class="media"><img src="imagens/Fatia_brownie_320px.png" alt="Fatia Pizza Brownie" loading="lazy"></picture>
-            </article>
-        </section>        
-
-        <section class="produtos">
-            <article class="card">
-                <div class="text">
-                    <h3>Morango do Amor</h3>
-                    <p class="descricao">Porque algumas paixões a gente não supera… e o morango do amor é uma delas! Ótimos para presentear tanto uma pessoa especial como para você mesmo. Qual deles vai direto pro seu coração? Morango ninho com Nutella; Morango do amor; Morango chocolatudo; Morango de Ferrero Rocher; Bombom de morango. <strong style="font-weight: bold;">Alérgicos contém derivados lácteos.</strong> </p>
-                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">Comprar: R$ 18,00</a>
-                </div>
-                <picture class="media"><img src="imagens/Morango_amor_320px.png" alt="Morango do Amor" loading="lazy"></picture>
+                <picture class="media">
+                    <img src="imagens/Fatia_brownie_320px.png" alt="Fatia Pizza Brownie" loading="lazy">
+                </picture>
             </article>
         </section>
+
+        <!-- 6. Morango do Amor — imagem à esquerda (invertido) -->
+        <section class="produtos" id="morango">
+            <article class="card card-reverse">
+                <div class="text">
+                    <h3>Morango do Amor</h3>
+                    <p class="descricao">Porque algumas paixões a gente não supera! Perfeitos para presentear ou se mimar. Escolha o seu favorito: Morango Ninho com Nutella, Morango do Amor clássico, Morango Chocolatudo, Morango de Ferrero Rocher ou Bombom de Morango.</p>
+                    <p><strong>⚠️ Alérgicos: contém derivados lácteos.</strong></p>
+                    <br>
+                    <span class="preco-badge">R$ 18,00</span><br>
+                    <a class="comprar" href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer">
+                        🛒 Comprar pelo WhatsApp
+                    </a>
+                </div>
+                <picture class="media">
+                    <img src="imagens/Morango_amor_320px.png" alt="Morango do Amor" loading="lazy">
+                </picture>
+            </article>
+        </section>
+
         <hr>
+
         <aside>
             <div id="pedido">
-            <h2>Faça seu pedido!</h2>
-            <p>Entre em contato conosco pelo <strong style="color: #e2af40; background-color: #55230d; padding: 4px; border-radius: 3px;">WhatsApp</strong> para fazer seu pedido ou tirar dúvidas sobre nossos produtos. Estamos prontos para atender você com todo o carinho e atenção que merece!</p>
-            <br><br>
-            <a href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer" class="clique">Clique aqui para pedir pelo WhatsApp!</a>
-            <br><br>
+                <h2>Faça seu pedido!</h2>
+                <p>Entre em contato conosco pelo <strong style="color:#e2af40;background-color:#55230d;padding:4px 6px;border-radius:3px;">WhatsApp</strong> para fazer seu pedido ou tirar dúvidas. Estamos prontos para atender você com todo o carinho que merece!</p>
+                <br>
+                <a href="https://wa.me/5585986064603" target="_blank" rel="noopener noreferrer" class="clique">
+                    Clique aqui para pedir pelo WhatsApp!
+                </a>
+                <br><br>
             </div>
         </aside>
-        
-<footer class="footer">
-  <div class="footer-content">
 
-    <div class="footer-icons">
-      
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/brownienopalito/"
-         target="_blank"
-         class="icon">
-        <!-- Ícone Instagram -->
-        <svg xmlns="http://www.w3.org/2000/svg"
-             width="26"
-             height="26"
-             fill="#fffaef"
-             viewBox="0 0 24 24">
-          <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.56 4 20 5.44 20 7.75v8.5c0 2.31-1.44 3.75-3.75 3.75h-8.5C5.44 20 4 18.56 4 16.25v-8.5C4 5.44 5.44 4 7.75 4zm8.75 1.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
-        </svg>
-      </a>
-
-      <!-- WhatsApp -->
-      <a href="https://wa.me/5585986064603"
-         target="_blank"
-         class="icon">
-        <!-- Ícone WhatsApp -->
-        <svg xmlns="http://www.w3.org/2000/svg"
-             width="26"
-             height="26"
-             fill="#fffaef"
-             viewBox="0 0 24 24">
-          <path d="M20.52 3.48A11.83 11.83 0 0012.01 0C5.38 0 .02 5.36.02 11.99c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62a11.94 11.94 0 005.83 1.49h.01c6.63 0 11.99-5.36 11.99-11.99 0-3.2-1.25-6.21-3.49-8.4zM12.02 21.5c-1.78 0-3.53-.48-5.06-1.39l-.36-.21-3.67.96.98-3.58-.23-.37a9.48 9.48 0 01-1.46-5.02c0-5.25 4.27-9.52 9.52-9.52 2.54 0 4.92.99 6.71 2.78a9.46 9.46 0 012.78 6.71c0 5.25-4.27 9.52-9.52 9.52zm5.21-7.13c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.67.15-.2.29-.77.95-.94 1.14-.17.2-.35.22-.64.07-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.29-1.05 1.03-1.05 2.51 0 1.48 1.08 2.91 1.23 3.11.15.2 2.12 3.23 5.14 4.53.72.31 1.28.49 1.72.63.72.23 1.37.2 1.89.12.58-.09 1.72-.7 1.96-1.37.24-.67.24-1.24.17-1.37-.07-.12-.26-.2-.55-.35z"/>
-        </svg>
-      </a>
-
-    </div>
-
-    <p>
-      &copy; Brownie no Palito - 2026<br>
-      CNPJ - 59.145.434/0001-22 <br>
-      Contato: +55 85 98606-4603 <br>
-      <a href="https://www.google.com/maps?ll=-3.736084,-38.543762&z=16&t=m&hl=pt-BR&gl=US&mapclient=embed&q=Av.+Jos%C3%A9+Jatahy,+1643+-+Jacarecanga+Fortaleza+-+CE+60011-173"
-         target="_blank"
-         class="endereco">
-        Av. José Jatahy - 1643 - Benfica, Fortaleza - CE
-      </a>
-    </p>
-
-  </div>
-</footer>
-
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/brownienopalito/" target="_blank" class="icon" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fffaef" viewBox="0 0 24 24">
+                            <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.56 4 20 5.44 20 7.75v8.5c0 2.31-1.44 3.75-3.75 3.75h-8.5C5.44 20 4 18.56 4 16.25v-8.5C4 5.44 5.44 4 7.75 4zm8.75 1.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+                        </svg>
+                    </a>
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/5585986064603" target="_blank" class="icon" aria-label="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fffaef" viewBox="0 0 24 24">
+                            <path d="M20.52 3.48A11.83 11.83 0 0012.01 0C5.38 0 .02 5.36.02 11.99c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62a11.94 11.94 0 005.83 1.49h.01c6.63 0 11.99-5.36 11.99-11.99 0-3.2-1.25-6.21-3.49-8.4zM12.02 21.5c-1.78 0-3.53-.48-5.06-1.39l-.36-.21-3.67.96.98-3.58-.23-.37a9.48 9.48 0 01-1.46-5.02c0-5.25 4.27-9.52 9.52-9.52 2.54 0 4.92.99 6.71 2.78a9.46 9.46 0 012.78 6.71c0 5.25-4.27 9.52-9.52 9.52zm5.21-7.13c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.67.15-.2.29-.77.95-.94 1.14-.17.2-.35.22-.64.07-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.29-1.05 1.03-1.05 2.51 0 1.48 1.08 2.91 1.23 3.11.15.2 2.12 3.23 5.14 4.53.72.31 1.28.49 1.72.63.72.23 1.37.2 1.89.12.58-.09 1.72-.7 1.96-1.37.24-.67.24-1.24.17-1.37-.07-.12-.26-.2-.55-.35z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p>
+                    &copy; Brownie no Palito - 2026<br>
+                    CNPJ - 59.145.434/0001-22<br>
+                    Contato: +55 85 98606-4603<br>
+                    <a href="https://www.google.com/maps?ll=-3.736084,-38.543762&z=16&t=m&hl=pt-BR&gl=US&mapclient=embed&q=Av.+Jos%C3%A9+Jatahy,+1643+-+Jacarecanga+Fortaleza+-+CE+60011-173" target="_blank" class="endereco">
+                        Av. José Jatahy - 1643 - Benfica, Fortaleza - CE
+                    </a>
+                </p>
+            </div>
+        </footer>
     </main>
 </body>
 </html>

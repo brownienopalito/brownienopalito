@@ -179,7 +179,7 @@ nav ul li a:hover {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 40px;
 }
 
@@ -196,7 +196,7 @@ nav ul li a:hover {
 .card img {
     width: 100%;
     max-width: 250px;
-    height: auto;
+    height: 250px;
     border-radius: 15px;
     margin-bottom: 20px;
 }

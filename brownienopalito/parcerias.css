@@ -177,10 +177,10 @@ nav ul li a:hover {
     margin-bottom: 50px;
 }
 
-.cards {
+.cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
 }
 
 /* CARD MODERNO */
@@ -320,6 +320,14 @@ aside p {
         line-height: 2em;
         font-size: medium;
         max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
     }
 
     .produtos {

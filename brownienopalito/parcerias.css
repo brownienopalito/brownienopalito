@@ -179,8 +179,8 @@ nav ul li a:hover {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 /* CARD MODERNO */
@@ -319,17 +319,6 @@ aside p {
     .lista-who {
         line-height: 2em;
         font-size: medium;
-        max-width: 100%;
-    }
-
-    .card {
-        width: 80%;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .cards {
         max-width: 100%;
     }
 

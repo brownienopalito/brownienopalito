@@ -195,7 +195,7 @@ nav ul li a:hover {
 
 .card img {
     width: 100%;
-    max-width: 250px;
+    max-width: 240px;
     height: 250px;
     border-radius: 15px;
     margin-bottom: 20px;
@@ -323,7 +323,14 @@ aside p {
     }
 
     .card {
-        width: 90%;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cards {
+        max-width: 100%;
     }
 
     .produtos {

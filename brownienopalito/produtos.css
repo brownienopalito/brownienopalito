@@ -389,4 +389,17 @@ aside {
 
     #logo_sem   { width: 140px; }
     #logo_brown { width: 46px; }
+
+    .filtros {
+        gap: 5px;
+        padding: 0 12px;
+    }
+
+    .filtro-btn {
+        padding: 8px;
+    }
+
+    main h2 {
+        margin-top: 180px;
+    }
 }

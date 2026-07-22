@@ -169,5 +169,16 @@
   </div>
 </footer>
 
+    <button id="btn-topo" aria-label="Voltar ao topo">↑</button>
+<script>
+    const btnTopo = document.getElementById('btn-topo');
+    window.addEventListener('scroll', () => {
+        btnTopo.classList.toggle('visivel', window.scrollY > 300);
+    });
+    btnTopo.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
 </body>
 </html>

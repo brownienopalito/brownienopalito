@@ -292,6 +292,38 @@ aside {
     transform: translateY(-3px);
 }
 
+#btn-topo {
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    background: #55230d;
+    color: #fffaef;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+    z-index: 9997;
+}
+
+#btn-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+#btn-topo:hover {
+    background: #d3b77a;
+    transform: translateY(-3px);
+}
+
 /* ── FOOTER ── */
 .footer {
     background-color: #55230d;

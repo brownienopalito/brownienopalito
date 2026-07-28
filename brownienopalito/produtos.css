@@ -347,7 +347,9 @@ aside {
 }
 
 @media (max-width: 768px) {
-    .header-moderno { padding: 12px 20px; }
+    .header-moderno { 
+        padding: 12px 20px;
+     }
 
     .menu-toggle { display: block; }
 
@@ -379,11 +381,15 @@ aside {
     }
 
     .filtros {
-        padding: 20px;
+        padding: 10px;
     }
 
     .filtro-btn {
         margin: 1px;
+    }
+
+    section {
+        scroll-margin-top: 120px;
     }
 
 }

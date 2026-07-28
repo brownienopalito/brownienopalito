@@ -375,7 +375,15 @@ aside {
     #logo_brown { width: 46px; }
 
     .h2_main {
-        margin-top: 200px;
+        margin-top: 280px;
+    }
+
+    .filtros {
+        padding: 20px;
+    }
+
+    .filtro-btn {
+        margin: 1px;
     }
 
 }

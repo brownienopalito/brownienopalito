@@ -4,6 +4,10 @@
    BROWNIE NO PALITO — produtos.css
    ============================================= */
 
+html {
+   scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -212,8 +216,8 @@ section {
 
 /* ── IMAGEM DO PRODUTO ── */
 .media img {
-    max-width: 380px;
-    height: 340px;
+    width: 300px;
+    height: 350px;
     margin: 20px 0 20px 40px;
     border-radius: 14px;
     object-fit: cover;
@@ -226,6 +230,22 @@ section {
 
 .card:hover .media img {
     transform: scale(1.02);
+}
+
+/* ── BOTÃO CATÁLOGO ── */
+
+.confira a {
+    background-color: #cfc5b7;
+    color: #55230d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.confira:hover {
+    background-color: #cfc5b7;
+    color: #55230d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
 /* ── ASIDE / PEDIDO ── */
@@ -276,6 +296,38 @@ aside {
     transform: translateY(-3px);
 }
 
+#btn-topo {
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    background: #55230d;
+    color: #fffaef;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+    z-index: 9997;
+}
+
+#btn-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+#btn-topo:hover {
+    background: #d3b77a;
+    transform: translateY(-3px);
+}
+
 /* ── FOOTER ── */
 .footer {
     background-color: #55230d;
@@ -312,7 +364,7 @@ aside {
     }
 
     .media img {
-        max-width: 100%;
+        width: 220px;
         height: 280px;
         margin: 0 0 16px;
     }
@@ -347,9 +399,7 @@ aside {
 }
 
 @media (max-width: 768px) {
-    .header-moderno { 
-        padding: 12px 20px;
-     }
+    .header-moderno { padding: 12px 20px; }
 
     .menu-toggle { display: block; }
 
@@ -376,85 +426,16 @@ aside {
     #logo_sem   { width: 140px; }
     #logo_brown { width: 46px; }
 
-    .h2_main {
-        margin-top: 280px;
-    }
-
     .filtros {
-        padding: 10px;
+        gap: 5px;
+        padding: 0 12px;
     }
 
     .filtro-btn {
-        margin: 1px;
+        padding: 8px;
     }
 
-    section {
-        scroll-margin-top: 120px;
+    main h2 {
+        margin-top: 180px;
     }
-
-}
-
-/* ── BOTÃO VOLTAR AO TOPO ── */
-#btn-topo {
-    position: fixed;
-    bottom: 90px;
-    right: 24px;
-    width: 46px;
-    height: 46px;
-    background: #55230d;
-    color: #fffaef;
-    border: none;
-    border-radius: 50%;
-    font-size: 22px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
-    z-index: 9997;
-}
-
-#btn-topo.visivel {
-    opacity: 1;
-    visibility: visible;
-}
-
-#btn-topo:hover {
-    background: #d3b77a;
-    transform: translateY(-3px);
-}
-
-/* ── PREÇO PROMOCIONAL ── */
-.preco-promo {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin-bottom: 14px;
-    text-indent: 0;
-}
-
-.preco-de {
-    font-size: 0.95rem;
-    color: #999;
-}
-
-.preco-de s {
-    color: #c0392b;
-    text-decoration: line-through;
-    text-decoration-color: #c0392b;
-    text-decoration-thickness: 2px;
-    font-weight: 600;
-}
-
-.preco-por {
-    font-size: 1.15rem;
-    color: #55230d;
-}
-
-.preco-por strong {
-    font-size: 1.35rem;
-    color: #2a7a3b;
 }

@@ -27,7 +27,7 @@ body {
 
 @media (max-width: 700px) {
     .links-page {
-    max-width: 400px;
+    max-width: 350px;
     margin: 100px auto;
     padding: 48px 20px 40px;
     min-height: 50vh;

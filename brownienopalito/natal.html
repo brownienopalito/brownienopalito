@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Presentes de Natal da Brownie no Palito em Fortaleza. Brownies artesanais, trufas e bolos para tornar o seu Natal ainda mais especial.">
+    <title>Natal | Brownie no Palito - Fortaleza CE</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3DZSMJ15T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G3DZSMJ15T');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="natal.css">
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- Neve animada -->
+<canvas id="neve"></canvas>
+
+<header class="header-natal">
+    <a href="index.html" class="header-logo">
+        <img id="logo_brown" src="imagens/logo_so_brownie.png" alt="Logo Brownie no Palito">
+        <img id="logo_sem"   src="imagens/logo_sem_brownie.png" alt="Brownie no Palito">
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav>
+        <ul>
+            <li><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/index.html">Home</a></li>
+            <li><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/produtos.html">Produtos</a></li>
+            <li><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/natal.html" class="nav-ativo">🎄Natal</a></li>
+            <li><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/parcerias.html">Parcerias</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu   = document.querySelector('nav');
+    toggle.addEventListener('click', () => menu.classList.toggle('active'));
+</script>
+
+<main>
+
+    <!-- HERO NATAL -->
+    <section class="hero-natal">
+        <div class="hero-natal__conteudo">
+            <span class="hero-natal__tag">✦ Coleção Especial de Natal ✦</span>
+            <h1 class="hero-natal__titulo"><span class="script">Feliz Natal!</span><span class="hero-natal__linha">O sabor do Natal em cada mordida</span></h1>
+            <p class="hero-natal__sub">Presentes artesanais feitos com carinho para tornar cada momento ainda mais especial.</p>
+            <div class="hero-natal__ctas">
+                <a href="#produtos-natal" class="btn-natal btn-natal--primary">Ver coleção</a>
+                <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20fazer%20um%20pedido%20especial."
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn-natal btn-natal--secondary"
+                   onclick="gtag('event','clique_link',{link_nome:'WhatsApp-Natal-Hero'})">
+                   Pedir pelo WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="hero-natal__decoracao">
+            <span class="deco deco--1">✦</span>
+            <span class="deco deco--2">✧</span>
+            <span class="deco deco--3">✦</span>
+            <span class="deco deco--4">✧</span>
+            <span class="deco deco--5">✦</span>
+            <span class="deco deco--6">✧</span>
+        </div>
+    </section>
+
+    <!-- FRASE -->
+    <div class="frase-natal">
+        <p>Que o verdadeiro sentido do Natal, o nascimento de <strong>Jesus</strong>, encha seu coração de amor, paz e esperança.</p>
+    </div>
+
+    <!-- PRODUTOS -->
+    <section id="produtos-natal" class="produtos-natal">
+        <h2 class="secao-titulo"> Coleção Especial de Natal</h2>
+        <p class="secao-sub">Perfeitos para presentear, confraternizar e celebrar.</p>
+
+        <div class="grade-natal">
+
+            <!-- Brownie Recheado -->
+            <article class="card-natal">
+                <div class="card-natal__badge">Clássico</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/guirlanda.jpeg" alt="Brownie Recheado" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Mini Guirlanda</h3>
+                    <p>Uma camada do nosso delicioso brownie, decorado com um recheio cremoso, miçangas natalinas e um lindo laço.</p>
+                    <div class="card-natal__preco">R$ 22,00</div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20o%20Brownie%20Recheado."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Brownie-Recheado'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <!-- Brownie no Palito -->
+            <article class="card-natal">
+                <div class="card-natal__badge card-natal__badge--destaque">Mais pedido</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/brownietone.jpeg" alt="Brownie no Palito" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Mini Brownietone</h3>
+                    <p>O clássico que não sai de moda! Camadas de brownie acompanhadas por maravilhosos recheios, decorado com miçangas natalinas e um delicioso brigadeiro.</p>
+                    <div class="card-natal__preco">R$ 27,00</div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20o%20Brownie%20no%20Palito."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Brownie-Palito'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <!-- Morango do Amor -->
+            <article class="card-natal">
+                <div class="card-natal__badge">Presente perfeito</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/trufas_natal.jpeg" alt="Morango do Amor" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Mini Trufas</h3>
+                    <p>Coberta por um chocolate equilibrado, recheio delicioso e casquinha de brownie, trazendo uma surpresa a cada mordida.</p>
+                    <div class="card-natal__preco">R$ 23,00</div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20o%20Morango%20do%20Amor."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Morango'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <!-- Trufas -->
+            <article class="card-natal">
+                <div class="card-natal__badge">Linha Premium</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/red.jpeg" alt="Trufas Recheadas" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Red Velvet</h3>
+                    <p>Um leve creme de ninho, bolo red velvet, recheio cremoso de ninho, geleia de morango fresco, decorado com recheio e lindos morangos.</p>
+                    <p><em>12 porções   aproximadamente 1,3kg</em></p>
+                    <div class="card-natal__preco">R$ 145,00 <small>/ un.</small></div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20Trufas%20Recheadas."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Trufas'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <!-- Mini Brownie -->
+            <article class="card-natal">
+                <div class="card-natal__badge">Linha Premium</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/abacaxi.jpeg" alt="Mini Brownie" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Delícia de Abacaxi</h3>
+                    <p>Camadas do recheio de ninho, uma deliciosa geleia de abacaxi e creme de ninho que deixa tudo mais leve.</p>
+                    <p><em>12 porções   aproximadamente 1,3kg</em></p>
+                    <div class="card-natal__preco">R$ 130,00 <small>/ un.</small></div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20Mini%20Brownies."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Mini-Brownie'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <!-- Petit -->
+            <article class="card-natal">
+                <div class="card-natal__badge">Linha Basic</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/pav.jpeg" alt="Petit de Brownie" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Pavê</h3>
+                    <p>Esse é para manter a tradição daquela frase que você já conhece! Temos recheio de chocolate, camada do nosso biscoito, recheio de ninho com a camada do nosso creme de ninho super cremoso.</p>
+                    <p><em>12 porções   aproximadamente 1,3kg</em></p>
+                    <div class="card-natal__preco">R$ 110,00 <small>/ un.</small></div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20Petit%20de%20Brownie."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Petit'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <article class="card-natal">
+                <div class="card-natal__badge">Linha Basic</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/sobrebrownie.jpeg" alt="Petit de Brownie" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Brownie Duo</h3>
+                    <p>Recheio de chocolate, nosso brownie molhadinho, com generosas camadas de recheio de ninho e aquele amendoim para dar o equilíbrio.</p>
+                    <p><em>12 porções   aproximadamente 1,3kg</em></p>
+                    <div class="card-natal__preco">R$ 100,00 <small>/ un.</small></div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20Petit%20de%20Brownie."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Petit'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Bolo Acetato -->
+            <article class="card-natal card-natal--largo">
+                <div class="card-natal__badge card-natal__badge--destaque">Para a ceia</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/kit_guir_tr.jpeg" alt="Kit 1: Doce Magia" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Kit 1: Doce Magia</h3>
+                    <p>Mini Trufas e Mini Guirlanda.<br>
+                    <div class="card-natal__preco">R$ 40,00 <small>/ un.</small></div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20o%20Kit%201:%20Doce%20Magia."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Kit-1'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <!-- Bolo Ganache -->
+            <article class="card-natal card-natal--largo">
+                <div class="card-natal__badge card-natal__badge--destaque">Para a ceia</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/kit_br_guir.jpeg" alt="Kit 2: Encanto Natalino" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Kit 2: Encanto Natalino</h3>
+                    <p>Mini Brownietone e Mini Guirlanda.<br>
+                    <div class="card-natal__preco">R$ 45,00 <small>/ un.</small></div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20o%20Kit%202:%20Encanto%20Natalino."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Kit-2'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <article class="card-natal card-natal--largo">
+                <div class="card-natal__badge card-natal__badge--destaque">Para a ceia</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/kit_br_tr.jpeg" alt="Kit 3: Brilho de Natal" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Kit 3: Brilho de Natal</h3>
+                    <p>Mini Brownietone e Mini Trufas.<br>
+                    <div class="card-natal__preco">R$ 47,00 <small>/ un.</small></div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20o%20Kit%203:%20Brilho%20de%20Natal."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Kit-3'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+            <article class="card-natal card-natal--largo">
+                <div class="card-natal__badge card-natal__badge--destaque">Para a ceia</div>
+                <div class="card-natal__img-wrap">
+                    <img src="image_natal/kit_todos.jpeg" alt="Kit 4: Celebração Noel" loading="lazy">
+                </div>
+                <div class="card-natal__corpo">
+                    <h3>Kit 4: Celebração Noel</h3>
+                    <p>Mini Brownietone, Mini Trufas e Mini Guirlanda.<br>
+                    <div class="card-natal__preco">R$ 65,00 <small>/ un.</small></div>
+                    <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20pedir%20o%20Kit%204:%20Celebração%20Noel."
+                       target="_blank" rel="noopener noreferrer"
+                       class="card-natal__btn"
+                       onclick="gtag('event','clique_link',{link_nome:'Natal-Kit-4'})">
+                        🛒 Pedir pelo WhatsApp
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-natal">
+        <div class="cta-natal__inner">
+            <span class="cta-natal__deco">✦</span>
+            <h2>Pedidos especiais de Natal</h2>
+            <p>Atendemos encomendas para ceias, cestas de presente, confraternizações e eventos corporativos. Entre em contato e vamos criar algo especial juntos.</p>
+            <a href="https://wa.me/5585986064603?text=Olá!%20Vim%20pela%20página%20de%20Natal%20e%20gostaria%20de%20fazer%20um%20pedido%20especial%20para%20o%20Natal."
+               target="_blank" rel="noopener noreferrer"
+               class="btn-natal btn-natal--primary btn-natal--grande"
+               onclick="gtag('event','clique_link',{link_nome:'WhatsApp-Natal-CTA'})">
+                Fazer pedido especial de Natal
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer-natal">
+    <div class="footer-natal__inner">
+        <div class="footer-natal__icons">
+            <a href="https://www.instagram.com/brownienopalito/" target="_blank" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fffaef" viewBox="0 0 24 24">
+                    <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.56 4 20 5.44 20 7.75v8.5c0 2.31-1.44 3.75-3.75 3.75h-8.5C5.44 20 4 18.56 4 16.25v-8.5C4 5.44 5.44 4 7.75 4zm8.75 1.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+                </svg>
+            </a>
+            <a href="https://wa.me/5585986064603" target="_blank" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fffaef" viewBox="0 0 24 24">
+                    <path d="M20.52 3.48A11.83 11.83 0 0012.01 0C5.38 0 .02 5.36.02 11.99c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62a11.94 11.94 0 005.83 1.49h.01c6.63 0 11.99-5.36 11.99-11.99 0-3.2-1.25-6.21-3.49-8.4zM12.02 21.5c-1.78 0-3.53-.48-5.06-1.39l-.36-.21-3.67.96.98-3.58-.23-.37a9.48 9.48 0 01-1.46-5.02c0-5.25 4.27-9.52 9.52-9.52 2.54 0 4.92.99 6.71 2.78a9.46 9.46 0 012.78 6.71c0 5.25-4.27 9.52-9.52 9.52zm5.21-7.13c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.67.15-.2.29-.77.95-.94 1.14-.17.2-.35.22-.64.07-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.29-1.05 1.03-1.05 2.51 0 1.48 1.08 2.91 1.23 3.11.15.2 2.12 3.23 5.14 4.53.72.31 1.28.49 1.72.63.72.23 1.37.2 1.89.12.58-.09 1.72-.7 1.96-1.37.24-.67.24-1.24.17-1.37-.07-.12-.26-.2-.55-.35z"/>
+                </svg>
+            </a>
+        </div>
+        <p>&copy; Brownie no Palito · 2026 · CNPJ 59.145.434/0001-22</p>
+        <p><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/index.html" class="footer-natal__link">Home</a> · <a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/produtos.html" class="footer-natal__link">Produtos</a> · <a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/parcerias.html" class="footer-natal__link">Parcerias</a></p>
+    </div>
+</footer>
+
+<button id="btn-topo" aria-label="Voltar ao topo">↑</button>
+<script>
+    const btnTopo = document.getElementById('btn-topo');
+    window.addEventListener('scroll', () => btnTopo.classList.toggle('visivel', window.scrollY > 300));
+    btnTopo.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* Neve */
+    (function() {
+        const canvas = document.getElementById('neve');
+        const ctx    = canvas.getContext('2d');
+        let W, H, flakes = [];
+        function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+        resize();
+        window.addEventListener('resize', resize);
+        function makeFlake() {
+            return { x: Math.random()*W, y: Math.random()*-H, r: Math.random()*3+1,
+                     speed: Math.random()*1.2+0.4, drift: Math.random()*0.6-0.3, alpha: Math.random()*0.5+0.4, col: ['200,162,74','140,28,28','31,95,58'][Math.floor(Math.random()*3)] };
+        }
+        for (let i = 0; i < 120; i++) { const f = makeFlake(); f.y = Math.random()*H; flakes.push(f); }
+        function draw() {
+            ctx.clearRect(0,0,W,H);
+            flakes.forEach(f => {
+                ctx.beginPath(); ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+                ctx.fillStyle=`rgba(${f.col},${f.alpha})`; ctx.fill();
+                f.y+=f.speed; f.x+=f.drift;
+                if(f.y>H+10) Object.assign(f,makeFlake());
+                if(f.x>W+10) f.x=-10;
+                if(f.x<-10)  f.x=W+10;
+            });
+            requestAnimationFrame(draw);
+        }
+        draw();
+    })();
+</script>
+
+</body>
+</html>

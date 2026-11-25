@@ -1,0 +1,422 @@
+@charset "UTF-8";
+
+/* =============================================
+   PALETA — inspirada no cartão de Natal
+   ============================================= */
+:root {
+    --creme:       #fbf1de;
+    --creme-claro: #fff8ea;
+    --pergaminho:  #f3e2c0;
+    --vinho:       #8c1c1c;
+    --vinho-escuro:#6a1212;
+    --verde:       #1f5f3a;
+    --verde-escuro:#174a2d;
+    --dourado:     #c8a24a;
+    --dourado-esc: #a8832f;
+    --texto:       #5a2a1a;
+    --texto-suave: #7d5a44;
+}
+
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--creme);
+    color: var(--texto);
+}
+
+/* ── BRILHOS ── */
+#neve {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ── HEADER ── */
+.header-natal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    background: var(--creme-claro);
+    box-shadow: 0 2px 14px rgba(106,18,18,0.12);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px double var(--dourado);
+}
+
+.header-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+#logo_brown { width: 60px; height: auto; }
+#logo_sem   { width: 180px; height: auto; }
+
+nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--vinho);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+nav ul li a:hover { color: var(--verde); }
+
+.nav-ativo {
+    color: var(--verde) !important;
+    border-bottom: 2px solid var(--dourado);
+    padding-bottom: 2px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: var(--vinho);
+    cursor: pointer;
+}
+
+/* ── HERO ── */
+.hero-natal {
+    position: relative;
+    min-height: 84vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 35%, #fffaf0 0%, var(--creme) 55%, var(--pergaminho) 100%);
+    padding: 80px 20px;
+}
+
+/* moldura fina vermelha, como no cartão */
+.hero-natal::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 2px solid var(--vinho);
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.75;
+}
+.hero-natal::after {
+    content: "";
+    position: absolute;
+    inset: 26px;
+    border: 1px solid var(--dourado);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-natal__conteudo { position: relative; z-index: 2; max-width: 720px; }
+
+.hero-natal__tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--verde);
+    margin-bottom: 14px;
+}
+
+.hero-natal__titulo { margin: 0 0 18px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+.hero-natal__titulo .script {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: clamp(3.6rem, 11vw, 7rem);
+    line-height: 1.05;
+    color: var(--vinho);
+    text-shadow: 0 2px 0 rgba(200,162,74,0.25);
+}
+
+.hero-natal__linha {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+    color: var(--texto);
+    position: relative;
+    padding: 0 6px;
+}
+.hero-natal__linha::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 3px;
+    margin: 12px auto 0;
+    background: linear-gradient(90deg, transparent, var(--verde), transparent);
+    border-radius: 3px;
+}
+
+.hero-natal__sub {
+    font-size: 1.05rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+    margin: 0 auto 32px;
+    max-width: 520px;
+}
+
+.hero-natal__ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* brilhos decorativos */
+.hero-natal__decoracao { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.deco { position: absolute; animation: flutuar 6s ease-in-out infinite; }
+.deco--1 { top: 12%; left: 9%;    font-size: 2.6rem; color: var(--vinho);   animation-delay: 0s; }
+.deco--2 { top: 16%; right: 10%;  font-size: 2rem;   color: var(--dourado); animation-delay: 1s; }
+.deco--3 { bottom: 20%; left: 12%; font-size: 2rem;  color: var(--verde);   animation-delay: 2s; }
+.deco--4 { bottom: 24%; right: 9%; font-size: 2.4rem; color: var(--dourado); animation-delay: 3s; }
+.deco--5 { top: 48%; left: 5%;    font-size: 1.6rem; color: var(--dourado); animation-delay: 1.5s; }
+.deco--6 { top: 44%; right: 5%;   font-size: 1.8rem; color: var(--vinho);   animation-delay: 2.5s; }
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+/* ── BOTÕES ── */
+.btn-natal {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(106,18,18,0.2);
+}
+
+.btn-natal--primary { background: var(--vinho); color: var(--creme-claro); }
+.btn-natal--primary:hover {
+    background: var(--vinho-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106,18,18,0.35);
+}
+
+.btn-natal--secondary { background: var(--verde); color: var(--creme-claro); }
+.btn-natal--secondary:hover { background: var(--verde-escuro); transform: translateY(-2px); }
+
+.btn-natal--grande { font-size: 1.1rem; padding: 16px 40px; }
+
+/* ── FRASE ── */
+.frase-natal {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--verde);
+    border-top: 3px double var(--dourado);
+    border-bottom: 3px double var(--dourado);
+}
+.frase-natal p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+    color: var(--creme-claro);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+.frase-natal strong { color: #f1d98a; }
+
+/* ── PRODUTOS ── */
+.produtos-natal { padding: 70px 24px; max-width: 1300px; margin: 0 auto; }
+
+.secao-titulo {
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    color: var(--vinho);
+    margin: 0 0 10px;
+}
+.secao-sub { text-align: center; color: var(--texto-suave); font-size: 1rem; margin: 0 0 50px; }
+
+.grade-natal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+.card-natal--largo {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 0;
+}
+.card-natal--largo .card-natal__img-wrap { border-radius: 16px 0 0 16px; height: 100%; }
+.card-natal--largo .card-natal__corpo { border-radius: 0 16px 16px 0; }
+
+.card-natal {
+    background: var(--creme-claro);
+    border: 1px solid rgba(200,162,74,0.55);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(106,18,18,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    position: relative;
+}
+.card-natal:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(106,18,18,0.22);
+    border-color: var(--dourado);
+}
+
+.card-natal__badge {
+    position: absolute;
+    top: 14px; left: 14px;
+    background: var(--creme-claro);
+    color: var(--vinho);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--dourado);
+    z-index: 1;
+}
+.card-natal__badge--destaque { background: var(--vinho); color: var(--creme-claro); border-color: var(--vinho); }
+
+.card-natal__img-wrap { overflow: hidden; height: 220px; }
+.card-natal__img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.card-natal:hover .card-natal__img-wrap img { transform: scale(1.05); }
+
+.card-natal__corpo { padding: 22px 20px; display: flex; flex-direction: column; gap: 10px; }
+
+.card-natal__corpo h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--vinho);
+    margin: 0;
+}
+.card-natal__corpo p { font-size: 0.9rem; color: var(--texto-suave); line-height: 1.65; margin: 0; }
+.card-natal__corpo strong { color: var(--texto); }
+
+.card-natal__preco { font-size: 1.35rem; font-weight: 700; color: var(--verde); margin-top: 4px; }
+.card-natal__preco small { font-size: 0.85rem; font-weight: 400; color: var(--texto-suave); }
+
+.card-natal__aviso { font-size: 0.82rem !important; color: var(--vinho) !important; }
+
+.card-natal__catalogo {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--vinho);
+    text-decoration: none;
+    border-bottom: 1px solid var(--dourado);
+    padding-bottom: 2px;
+    align-self: flex-start;
+    transition: color 0.2s;
+}
+.card-natal__catalogo:hover { color: var(--verde); }
+
+.card-natal__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    background: var(--verde);
+    color: var(--creme-claro);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    margin-top: auto;
+}
+.card-natal__btn:hover {
+    background: var(--vinho);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(106,18,18,0.3);
+}
+
+/* ── CTA FINAL (faixa vinho, como a base do cartão) ── */
+.cta-natal {
+    background: linear-gradient(180deg, var(--vinho) 0%, var(--vinho-escuro) 100%);
+    border-top: 4px solid var(--dourado);
+    padding: 80px 24px;
+    text-align: center;
+}
+.cta-natal__inner { max-width: 620px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.cta-natal__deco { font-size: 2.4rem; color: var(--dourado); }
+.cta-natal h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    color: var(--creme-claro);
+    margin: 0;
+}
+.cta-natal p { color: #f0dcc8; font-size: 1rem; line-height: 1.7; margin: 0; }
+.cta-natal .btn-natal--primary { background: var(--dourado); color: var(--vinho-escuro); }
+.cta-natal .btn-natal--primary:hover { background: #dcb95e; }
+
+/* ── FOOTER ── */
+.footer-natal { background: var(--vinho-escuro); border-top: 1px solid rgba(200,162,74,0.5); padding: 30px 0; text-align: center; }
+.footer-natal__inner { max-width: 600px; margin: 0 auto; }
+.footer-natal__icons { display: flex; justify-content: center; gap: 18px; margin-bottom: 14px; }
+.footer-natal__icons a { opacity: 0.85; transition: opacity 0.2s, transform 0.2s; }
+.footer-natal__icons a:hover { opacity: 1; transform: scale(1.15); }
+.footer-natal p { color: #e8cfc0; font-size: 0.82rem; margin: 6px 0; }
+.footer-natal__link { color: #f1d98a; text-decoration: none; transition: color 0.2s; }
+.footer-natal__link:hover { color: #fff; }
+
+/* ── BOTÃO TOPO ── */
+#btn-topo {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 46px; height: 46px;
+    background: var(--vinho);
+    color: var(--creme-claro);
+    border: 2px solid var(--dourado);
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(106,18,18,0.35);
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s, transform 0.3s, background 0.2s;
+    z-index: 9997;
+}
+#btn-topo.visivel { opacity: 1; visibility: visible; }
+#btn-topo:hover { background: var(--verde); transform: translateY(-3px); }
+
+/* ══════════════════════════════
+   RESPONSIVIDADE
+   ══════════════════════════════ */
+@media (max-width: 1024px) {
+    .grade-natal { grid-template-columns: repeat(2, 1fr); }
+    .card-natal--largo { grid-column: span 2; grid-template-columns: 220px 1fr; }
+}
+
+@media (max-width: 700px) {
+    .header-natal { padding: 12px 18px; }
+    .menu-toggle { display: block; }
+    #logo_sem { width: 130px; }
+    #logo_brown { width: 44px; }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px; right: 0;
+        width: 100%;
+        background: var(--creme-claro);
+        box-shadow: 0 5px 16px rgba(106,18,18,0.18);
+        z-index: 999;
+    }
+    nav ul { flex-direction: column; align-items: center; padding: 20px 0; gap: 16px; }
+    nav.active { display: block; }
+
+    .grade-natal { grid-template-columns: 1fr; }
+    .card-natal--largo { grid-column: span 1; grid-template-columns: 1fr; }
+    .card-natal--largo .card-natal__img-wrap { border-radius: 16px 16px 0 0; height: 220px; }
+    .card-natal--largo .card-natal__corpo { border-radius: 0 0 16px 16px; }
+
+    .hero-natal { min-height: 70vh; padding: 60px 16px; }
+    .hero-natal::before { inset: 10px; }
+    .hero-natal::after  { inset: 16px; }
+    .hero-natal__ctas { flex-direction: column; align-items: center; }
+    .btn-natal { width: 240px; text-align: center; }
+}

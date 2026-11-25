@@ -14,12 +14,15 @@
     </script>
     <meta name="description" content="Brownie no Palito em Fortaleza - CE. Brownies artesanais, pizza brownie e ovos recheados com ingredientes de alta qualidade.">
     <title>Brownie no Palito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="imagens/favicom.io" type="image/x-icon">
 </head>
 <body>
     <header class="header-moderno">
-        <a href="index.html">
+        <a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/index.html">
         <div class="logo">
             <img id="logo_brown" src="imagens/logo_so_brownie.png" alt="logo da empresa somente brownie">
             <img id="logo_sem"  src="imagens/logo_sem_brownie.png" alt="logo da empresa somente texto">
@@ -31,9 +34,10 @@
 
         <nav>
             <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="parcerias.html">Parcerias</a></li>
+                    <li><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/index.html">Home</a></li>
+                    <li><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/natal.html">🎄Natal</a></li>
+                    <li><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/produtos.html">Produtos</a></li>
+                    <li><a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/parcerias.html">Parcerias</a></li>
             </ul>
         </nav>
     </header>
@@ -47,19 +51,115 @@
     </script>
     
     <main>
-        <div class="hero-wrap">
-            <picture class="ovo">
-                <source media="(max-width: 900px)" srcset="imagens/pizza_brownie_684x705.jpg" type="image/jpg">
-                <img src="imagens/pizza_brownie_far_2500x2500.png" alt="Pizza Brownie">
-            </picture>
-            <div class="hero-overlay">
-                <p class="hero-tagline">Com amor e com afeto, fiz seu doce predileto!</p>
-                <div class="hero-ctas">
-                    <a href="produtos.html" class="hero-btn hero-btn--primary">Ver produtos</a>
-                    <a href="https://wa.me/5585986064603?text=Olá!%20Conheci%20a%20Brownie%20no%20Palito%20pelo%20site%20e%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn--secondary">Peça agora</a>
+        <!-- ── HERO: texto + carrossel ── -->
+        <section class="hero-home">
+            <div class="hero-home__decoracao" aria-hidden="true">
+                <span class="deco deco--1">✦</span>
+                <span class="deco deco--2">✧</span>
+                <span class="deco deco--3">✦</span>
+                <span class="deco deco--4">✧</span>
+            </div>
+
+            <div class="hero-home__inner">
+                <div class="hero-home__texto">
+                    <span class="hero-home__tag">✦ Brownies artesanais · Fortaleza, CE ✦</span>
+                    <h1 class="hero-home__titulo">
+                        <span class="script">Brownie no Palito</span>
+                        <span class="hero-home__linha">Com amor e com afeto, fiz seu doce predileto!</span>
+                    </h1>
+                    <p class="hero-home__sub">Doces feitos com ingredientes selecionados e muito carinho, direto do nosso carrinho na Av. José Jatahy.</p>
+                    <div class="hero-ctas">
+                        <a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/produtos.html" class="hero-btn hero-btn--primary">Ver produtos</a>
+                        <a href="https://wa.me/5585986064603?text=Olá!%20Conheci%20a%20Brownie%20no%20Palito%20pelo%20site%20e%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn--secondary">Peça agora</a>
+                    </div>
+                </div>
+
+                <!-- Carrossel -->
+                <div class="carousel" id="carousel" aria-label="Fotos dos produtos">
+                    <div class="carousel__track" id="carouselTrack"></div>
+                    <button class="carousel__arrow carousel__arrow--prev" id="carouselPrev" aria-label="Foto anterior">&#8249;</button>
+                    <button class="carousel__arrow carousel__arrow--next" id="carouselNext" aria-label="Próxima foto">&#8250;</button>
+                    <div class="carousel__dots" id="carouselDots"></div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <script>
+        /* ── CONFIGURAÇÃO DO CARROSSEL ─────────────────
+           src  → caminho da imagem
+           alt  → texto alternativo
+           fit  → "cover"   : preenche o quadro (bom p/ fotos em pé)
+                  "contain" : mostra a foto inteira com fundo desfocado
+                              (bom p/ fotos deitadas ou quadradas)
+           pos  → ponto de foco do corte quando fit = "cover"
+           ─────────────────────────────────────────── */
+        const slides = [
+            { src: "imagens/petit.jpeg",                 alt: "Petit de Brownie com recheios variados", fit: "cover",   pos: "center 55%" },
+            { src: "imagens/trufas.jpeg",                alt: "Trufas recheadas em bandeja",            fit: "contain", pos: "center" },
+            { src: "imagens/Bolo.jpeg",                  alt: "Bolo com cobertura de brigadeiro",       fit: "cover",   pos: "center" },
+            { src: "imagens/Brownie_recheado_320px.png", alt: "Brownie recheado",                       fit: "contain", pos: "center" },
+        ];
+
+        /* ── LÓGICA (não precisa editar abaixo) ─────── */
+        const INTERVAL = 4500;
+        const track    = document.getElementById("carouselTrack");
+        const dotsEl   = document.getElementById("carouselDots");
+        const car      = document.getElementById("carousel");
+
+        slides.forEach((s, i) => {
+            const div = document.createElement("div");
+            div.className = "carousel__slide" + (s.fit === "contain" ? " is-contain" : "") + (i === 0 ? " is-active" : "");
+            div.style.setProperty("--bg", `url("${s.src}")`);
+            div.setAttribute("aria-hidden", i !== 0);
+
+            const img = document.createElement("img");
+            img.src     = s.src;
+            img.alt     = s.alt;
+            img.loading = i === 0 ? "eager" : "lazy";
+            img.style.objectPosition = s.pos || "center";
+
+            div.appendChild(img);
+            track.appendChild(div);
+
+            const dot = document.createElement("button");
+            dot.className = "carousel__dot" + (i === 0 ? " is-active" : "");
+            dot.setAttribute("aria-label", `Ir para foto ${i + 1}`);
+            dot.addEventListener("click", () => { goTo(i); startAuto(); });
+            dotsEl.appendChild(dot);
+        });
+
+        let current = 0, timer = null;
+        const allSlides = () => track.querySelectorAll(".carousel__slide");
+        const allDots   = () => dotsEl.querySelectorAll(".carousel__dot");
+
+        function goTo(idx) {
+            allSlides()[current].classList.remove("is-active");
+            allSlides()[current].setAttribute("aria-hidden", true);
+            allDots()[current].classList.remove("is-active");
+            current = (idx + slides.length) % slides.length;
+            allSlides()[current].classList.add("is-active");
+            allSlides()[current].setAttribute("aria-hidden", false);
+            allDots()[current].classList.add("is-active");
+        }
+        const next = () => goTo(current + 1);
+        const prev = () => goTo(current - 1);
+        function startAuto() { clearInterval(timer); timer = setInterval(next, INTERVAL); }
+        startAuto();
+
+        document.getElementById("carouselNext").addEventListener("click", () => { next(); startAuto(); });
+        document.getElementById("carouselPrev").addEventListener("click", () => { prev(); startAuto(); });
+
+        car.addEventListener("mouseenter", () => clearInterval(timer));
+        car.addEventListener("mouseleave", startAuto);
+
+        let touchStartX = 0;
+        car.addEventListener("touchstart", e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+        car.addEventListener("touchend", e => {
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); startAuto(); }
+        }, { passive: true });
+        </script>
+
         <section id="sobre">
                 <div class="container">
                 <div class="texto">
@@ -89,7 +189,7 @@
                         <li>Morango do Amor em versões variadas</li>
                         <li>Fatias de bolo</li>
                     </ul>
-                    <a href="produtos.html" class="btn-produtos">Ver todos os produtos →</a>
+                    <a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/produtos.html" class="btn-produtos">Ver todos os produtos →</a>
                 </div>
                     <picture class="grid">
                         <img src="imagens/ovo_rocher.png" alt="ovo com ferrero rocher">
@@ -115,7 +215,7 @@
         <section class="onde">
             <div class="text_onde">
                 <h2>Onde Chegamos</h2>
-                <p>É com muito orgulho e muito trabalho que a <strong>Brownie no Palito</strong> atua na <strong style="background-color: #55230d; color: #fffaef; padding: 2px;">Av. José Jatahy, na região do bairro Benfica, em Fortaleza – CE.</strong> Com nosso carrinho, levamos diariamente sabor, qualidade e uma experiência diferenciada aos amantes de doces da região.
+                <p>É com muito orgulho e muito trabalho que a <strong>Brownie no Palito</strong> atua na <strong class="destaque-endereco">Av. José Jatahy, na região do bairro Benfica, em Fortaleza – CE.</strong> Com nosso carrinho, levamos diariamente sabor, qualidade e uma experiência diferenciada aos amantes de doces da região.
                    Ao longo de dois anos de dedicação, buscamos constantemente evoluir e trazer melhorias pensadas especialmente para o nosso público consumidor. Nosso objetivo sempre foi fortalecer o contato e a proximidade com cada cliente, ouvindo atentamente sugestões e entendendo o que podemos fazer para tornar nossos produtos ainda mais especiais.
                 </p>
                 <p>
@@ -138,10 +238,10 @@ Convidamos todos vocês a fazerem parte dessa jornada conosco, acompanhando noss
         <section id="home-parcerias">
             <div class="parcerias-home-inner">
                 <div class="parcerias-home-texto">
-                    <span class="parcerias-home-tag">🤝 Para empresas e revendedores</span>
+                    <span class="parcerias-home-tag">Para empresas e revendedores</span>
                     <h2>Quer vender nossos brownies?</h2>
                     <p>Fornecemos para cafeterias, buffets, empresas, escolas e revendedores independentes. Produtos artesanais, embalagens especiais e condições exclusivas para parceiros.</p>
-                    <a href="parcerias.html" class="parcerias-home-btn">Conhecer condições de parceria →</a>
+                    <a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/parcerias.html" class="parcerias-home-btn">Conhecer condições de parceria →</a>
                 </div>
                 <div class="parcerias-home-icones">
                     <div class="parceria-item">Cafeterias</div>
@@ -153,6 +253,16 @@ Convidamos todos vocês a fazerem parte dessa jornada conosco, acompanhando noss
                 </div>
             </div>
         </section>
+
+        <aside>
+            <div id="saiba">
+                <h2>Saiba mais</h2>
+                <p>
+                Acesse nossas redes sociais para ter mais informações sobre nossos produtos, novidades e promoções.
+                Aproveite as promoções da Brownie no Palito! <a href="https://www.instagram.com/brownienopalito/" target="_blank">Clique aqui</a>
+                </p>
+            </div>
+        </aside>
 
 <footer class="footer">
   <div class="footer-content">
@@ -198,7 +308,7 @@ Convidamos todos vocês a fazerem parte dessa jornada conosco, acompanhando noss
          class="endereco">
         Av. José Jatahy - 1643 - Benfica, Fortaleza - CE
       </a><br><br>
-      <a href="parcerias.html" class="endereco" style="font-weight:700;">🤝 Seja um parceiro</a>
+      <a href="https://brownienopalito.github.io/brownienopalito/brownienopalito/parcerias.html" class="endereco" style="font-weight:700;">🤝 Seja um parceiro</a>
     </p>
 
   </div>
